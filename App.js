@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
 
   squares: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     backgroundColor: 'grey',
     padding: 30
   }
