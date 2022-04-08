@@ -1,9 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { Button } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>My goals app</Text>
+      <Text>Another text</Text>
+      <Button title="Tap me" onPress={() => console.log("click")}/>
     </View>
   );
 }
