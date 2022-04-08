@@ -5,8 +5,19 @@ import {
   Button, 
   TextInput
 } from 'react-native';
+import { useState } from 'react';
 
 export default function App() {
+  const [goalText, setGoalText] = useState('');
+
+  const goalInputHandler = (goalText) => {
+    setGoalText(goalText);
+  };
+
+  const addGoalHandler = () => {
+    console.log(goalText);
+  };
+
   return (
     <View style={styles.appContainer}>
 
@@ -15,29 +26,18 @@ export default function App() {
         <TextInput 
           style={styles.textInput} 
           placeholder="Your course goal"
-          placeholderTextColor="black"
+          onChangeText={goalInputHandler}
           ></TextInput>
-        <Button title="Add Goal"></Button>
+        <Button 
+          color="pink" 
+          title="Add Goal"
+          onPress={addGoalHandler}
+          ></Button>
       </View>
 
       {/* goals list */}
-      <View style={styles.bottomView}>
+      <View style={styles.goalsContainer}>
         <Text>List of goals...</Text>
-      </View>
-
-      {/* flex box squares */}
-      <View style={styles.squares}>
-        <View style={styles.one}>
-          <Text>1</Text>
-        </View>
-
-        <View style={styles.two}>
-          <Text>2</Text>
-        </View>
-
-        <View style={styles.three}>
-          <Text>3</Text>
-        </View>
       </View>
     </View>
   );
@@ -48,45 +48,27 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: 'white',
-    // padding: 70
+    padding: 40
   },
+
   inputContainer: {
+    flex: 0.2,
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '#cccccc',
+    marginBottom: 24
   },
   textInput: {
     borderWidth: 1,
     borderColor: '#cccccc',
-    width: '80%',
+    width: '70%',
     marginRight: 8,
     padding: 8
   },
 
-  one: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'red',
-    flex: 0.3,
+  goalsContainer: {
+    flex: 0.8,
+    flexDirection: 'row'
   },
-  two: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'blue',
-    flex: 0.1,
-  },
-  three: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'green',
-    flex: 0.6,
-  },
-
-  squares: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'stretch',
-    backgroundColor: 'grey',
-    padding: 30
-  }
 });
