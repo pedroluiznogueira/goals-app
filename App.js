@@ -11,8 +11,12 @@ export default function App() {
     <View style={styles.appContainer}>
 
       {/* input and button */}
-      <View style={styles.topView}>
-        <TextInput placeholder="Your course goal"></TextInput>
+      <View style={styles.inputContainer}>
+        <TextInput 
+          style={styles.textInput} 
+          placeholder="Your course goal"
+          placeholderTextColor="black"
+          ></TextInput>
         <Button title="Add Goal"></Button>
       </View>
 
@@ -29,17 +33,19 @@ const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
     flexDirection: 'column',
+    alignItems: 'center',
     backgroundColor: 'white',
     padding: 70
   },
-  topView: {
-    flex: 0.2,
-    alignItems: 'center',
-    justifyContent: 'center',
+  inputContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
-  bottomView: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-start'
+  textInput: {
+    borderWidth: 1,
+    borderColor: '#cccccc',
+    width: '80%',
+    marginRight: 8,
+    padding: 8
   }
 });
