@@ -25,6 +25,20 @@ export default function App() {
         <Text>List of goals...</Text>
       </View>
 
+      {/* flex box squares */}
+      <View style={styles.squares}>
+        <View style={styles.one}>
+          <Text>1</Text>
+        </View>
+
+        <View style={styles.two}>
+          <Text>2</Text>
+        </View>
+
+        <View style={styles.three}>
+          <Text>3</Text>
+        </View>
+      </View>
     </View>
   );
 }
@@ -33,9 +47,8 @@ const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
     flexDirection: 'column',
-    alignItems: 'center',
     backgroundColor: 'white',
-    padding: 70
+    // padding: 70
   },
   inputContainer: {
     flexDirection: 'row',
@@ -47,5 +60,33 @@ const styles = StyleSheet.create({
     width: '80%',
     marginRight: 8,
     padding: 8
+  },
+
+  one: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'red',
+    width: 100,
+    height: 100
+  },
+  two: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'blue',
+    width: 100,
+    height: 100
+  },
+  three: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'green',
+    width: 100,
+    height: 100
+  },
+
+  squares: {
+    flex: 1,
+    backgroundColor: 'grey',
+    padding: 30
   }
 });
