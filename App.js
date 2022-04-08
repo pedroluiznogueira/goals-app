@@ -66,22 +66,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'red',
-    width: 100,
-    height: 100
+    flex: 0.3,
   },
   two: {
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'blue',
-    width: 100,
-    height: 100
+    flex: 0.1,
   },
   three: {
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'green',
-    width: 100,
-    height: 100
+    flex: 0.6,
   },
 
   squares: {
