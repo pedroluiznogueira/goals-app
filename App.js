@@ -9,16 +9,18 @@ import {
 export default function App() {
   return (
     <View style={styles.appContainer}>
+
       {/* input and button */}
-      <View>
+      <View style={styles.topView}>
         <TextInput placeholder="Your course goal"></TextInput>
         <Button title="Add Goal"></Button>
       </View>
 
       {/* goals list */}
-      <View>
+      <View style={styles.bottomView}>
         <Text>List of goals...</Text>
       </View>
+
     </View>
   );
 }
@@ -26,7 +28,18 @@ export default function App() {
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    backgroundColor: 'grey',
+    flexDirection: 'column',
+    backgroundColor: 'white',
     padding: 70
+  },
+  topView: {
+    flex: 0.2,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  bottomView: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-start'
   }
 });
