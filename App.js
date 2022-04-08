@@ -4,8 +4,14 @@ import { Button } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Another text</Text>
-      <Button title="Tap me" onPress={() => console.log("click")}/>
+      <Text style={{
+        color: 'purple',
+        margin: 100,
+        borderWidth: 1,
+        borderColor: 'red',
+        padding: 10
+      }}>Another text</Text>
+      <Button title="Tap me" />
     </View>
   );
 }
