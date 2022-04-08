@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   squares: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: 'grey',
     padding: 30
