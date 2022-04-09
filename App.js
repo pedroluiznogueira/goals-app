@@ -27,10 +27,12 @@ export default function App() {
         <TextInput 
           style={styles.textInput} 
           placeholder="Your course goal"
+          placeholderTextColor='#ffffff'
+          color='#ffffff'
           onChangeText={goalInputHandler}
           ></TextInput>
         <Button 
-          color="pink" 
+          color="#f542ce" 
           title="Add Goal"
           onPress={addGoalHandler}
           ></Button>
@@ -58,7 +60,7 @@ const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: 'white',
+    backgroundColor: '#5e0acc',
     padding: 40
   },
 
@@ -86,7 +88,7 @@ const styles = StyleSheet.create({
     padding: 8,
     margin: 8,
     borderRadius: 6,
-    backgroundColor: '#5e0acc'
+    backgroundColor: '#f542ce'
   },
   goalText: {
     color: 'white'
