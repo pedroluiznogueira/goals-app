@@ -9,13 +9,14 @@ import { useState } from 'react';
 
 export default function App() {
   const [goalText, setGoalText] = useState('');
+  const [goals, setGoals] = useState([]);
 
   const goalInputHandler = (goalText) => {
     setGoalText(goalText);
   };
 
   const addGoalHandler = () => {
-    console.log(goalText);
+    setGoals([...goals, goalText]);
   };
 
   return (
