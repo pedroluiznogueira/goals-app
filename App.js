@@ -38,8 +38,10 @@ export default function App() {
 
       {/* goals list */}
       <View style={styles.goalsContainer}>
-        {goals.map((goal) => (
-          <Text>{goal}</Text>
+        {goals.map((goal, index) => (
+          <Text key={index}>
+            {goal}
+          </Text>
         ))}
       </View>
     </View>
