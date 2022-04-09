@@ -16,7 +16,7 @@ export default function App() {
   };
 
   const addGoalHandler = () => {
-    setGoals([...goals, goalText]);
+    setGoals((currentGoals) => [...currentGoals, goalText]);
   };
 
   return (
@@ -38,7 +38,9 @@ export default function App() {
 
       {/* goals list */}
       <View style={styles.goalsContainer}>
-        <Text>List of goals...</Text>
+        {goals.map((goal) => (
+          <Text>{goal}</Text>
+        ))}
       </View>
     </View>
   );
