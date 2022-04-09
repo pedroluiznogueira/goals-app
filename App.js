@@ -4,7 +4,8 @@ import {
   View, 
   Button,
   TextInput,
-  ScrollView
+  ScrollView,
+  FlatList
 } from 'react-native';
 import { useState } from 'react';
 
@@ -41,13 +42,17 @@ export default function App() {
 
       {/* goals list */}
       <View style={styles.goalsContainer}>
-        <ScrollView alwaysBounceVertical={false}>
-          {goals.map((goal, index) => (
-            <View style={styles.goalItem} key={index}>
-              <Text style={styles.goalText}>{goal}</Text>
-            </View>
-          ))}
-        </ScrollView>
+        <FlatList 
+          data={goals}
+          renderItem={(goalData) => {
+            return (
+              <View style={styles.goalItem} key={goalData.index}>
+                <Text style={styles.goalText}>{goalData.item}</Text>
+              </View>
+            )
+          }}
+          alwaysBounceVertical={false}
+          />
       </View>
     </View>
   );
