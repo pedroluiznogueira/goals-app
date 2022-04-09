@@ -18,7 +18,10 @@ export default function App() {
   };
 
   const addGoalHandler = () => {
-    setGoals((currentGoals) => [...currentGoals, goalText]);
+    setGoals((currentGoals) => [
+      ...currentGoals,
+      { text: goalText, key: Math.random().toString()}
+    ]);
   };
 
   return (
@@ -46,8 +49,8 @@ export default function App() {
           data={goals}
           renderItem={(goalData) => {
             return (
-              <View style={styles.goalItem} key={goalData.index}>
-                <Text style={styles.goalText}>{goalData.item}</Text>
+              <View style={styles.goalItem} key={goalData.item.key}>
+                <Text style={styles.goalText}>{goalData.item.text}</Text>
               </View>
             )
           }}
