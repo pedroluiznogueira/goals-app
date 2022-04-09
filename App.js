@@ -41,16 +41,10 @@ export default function App() {
 
       {/* goals list */}
       <View style={styles.goalsContainer}>
-        <ScrollView>
+        <ScrollView alwaysBounceVertical={false}>
           {goals.map((goal, index) => (
-            <View     
-              style={styles.goalItem}
-              key={index}>
-
-              <Text
-                style={styles.goalText}
-              >{goal}</Text> 
-
+            <View style={styles.goalItem} key={index}>
+              <Text style={styles.goalText}>{goal}</Text>
             </View>
           ))}
         </ScrollView>
