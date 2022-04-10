@@ -8,6 +8,7 @@ function InputGoal() {
     
     const handleSubmit = () => {
         addGoal(text);
+        setText('');
     }
 
     const handleChange = (enteredGoal) => {
@@ -28,6 +29,7 @@ function InputGoal() {
                 color="#f542ce" 
                 title="Add Goal"
                 onPress={handleSubmit}
+                disabled={text.length === 0}
             ></Button>
         </View>
     );
