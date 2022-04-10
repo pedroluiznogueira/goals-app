@@ -15,7 +15,7 @@ function GoalsList() {
             <FlatList 
                 data={goals}
                 renderItem={(goalData) => {
-                return <GoalItem item={goalData.item}/>
+                return <GoalItem goal={goalData.item}/>
                 }}
                 alwaysBounceVertical={false}
             />

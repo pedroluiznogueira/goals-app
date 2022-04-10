@@ -6,12 +6,12 @@ function GoalItem (props) {
   const {deleteGoal} = useContext(GoalContext);
   
   const handleDelete = () => {
-    deleteGoal(props.item);
+    deleteGoal(props.goal.id);
   }
 
   return (
-      <View style={styles.goalItem} key={props.item.key}>
-        <Text style={styles.goalText}>{props.item.text}</Text>
+      <View style={styles.goalItem} key={props.goal.id}>
+        <Text style={styles.goalText}>{props.goal.text}</Text>
 
         <Pressable onPress={handleDelete}>
           <View style={styles.deleteContainer}>

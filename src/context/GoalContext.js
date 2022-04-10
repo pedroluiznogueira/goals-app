@@ -6,12 +6,23 @@ const GoalContext = createContext();
 export const GoalProvider = ( {children} ) => {
     const [goals, setGoals] = useState([]);
 
-    const deleteGoal = (selectedGoal) => {
-        setGoals(goals.filter((goal) => selectedGoal.key !== goal.key));
+    const apiUrl = "http://b2bf-2804-14c-59-30f6-7475-4056-1df7-7875.ngrok.io";
+
+    const deleteGoal = async (id) => {
+        const response = await fetch(`${apiUrl}/goals/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        });
+        const data = await response.json();
+
+        setGoals(goals.filter((goal) => id !== goal.id));
     }
 
     const addGoal = async (enteredGoal) => {
-        const response = await fetch('http://b2bf-2804-14c-59-30f6-7475-4056-1df7-7875.ngrok.io/goals', {
+        const response = await fetch(`${apiUrl}/goals`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -21,11 +32,7 @@ export const GoalProvider = ( {children} ) => {
         });
 
         const data = await response.json();
-        setGoals((currentGoals) => [
-            ...currentGoals,
-            { text: enteredGoal, key: Math.random().toString() }
-        ]);
-        console.log(data);
+        setGoals((currentGoals) => [...currentGoals, data]);
         return data;
     }
 
