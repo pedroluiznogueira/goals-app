@@ -7,7 +7,7 @@ export const GoalProvider = ( {children} ) => {
     const [goals, setGoals] = useState([]);
 
     const deleteGoal = (selectedGoal) => {
-        setGoals(goals.filter((goal) => selectedGoal !== goal.text));
+        setGoals(goals.filter((goal) => selectedGoal.key !== goal.key));
     }
 
     const addGoal = (enteredGoal) => {

@@ -6,7 +6,7 @@ function GoalItem (props) {
   const {deleteGoal} = useContext(GoalContext);
   
   const handleDelete = () => {
-    deleteGoal(props.item.text);
+    deleteGoal(props.item);
   }
 
   return (
