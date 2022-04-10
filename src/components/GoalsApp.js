@@ -2,14 +2,14 @@ import {
     View,
     StyleSheet
 } from 'react-native';
-import InputGoal from './InputGoal';
+import GoalInput from './GoalInput';
 import GoalsList from './GoalsList';
 
 function GoalsApp() {
 
     return (
         <View style={styles.appContainer}>
-            <InputGoal />
+            <GoalInput />
             <GoalsList />
         </View>
   );
