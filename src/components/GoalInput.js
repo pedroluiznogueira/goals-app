@@ -1,4 +1,4 @@
-import { View, StyleSheet, TextInput, Button } from 'react-native';
+import { View, StyleSheet, TextInput, Button, Modal } from 'react-native';
 import { useContext, useState } from 'react';
 import GoalContext from '../context/GoalContext';
 
@@ -16,22 +16,24 @@ function InputGoal() {
     };
 
     return (
-        <View style={styles.inputContainer}>
-            <TextInput 
-                style={styles.textInput} 
-                placeholder="Your course goal"
-                placeholderTextColor='#ffffff'
-                color='#ffffff'
-                onChangeText={handleChange}
-                value={text}
-                ></TextInput>
-            <Button 
-                color="#f542ce" 
-                title="Add Goal"
-                onPress={handleSubmit}
-                disabled={text.length === 0}
-            ></Button>
-        </View>
+        <Modal>
+            <View style={styles.inputContainer}>
+                <TextInput 
+                    style={styles.textInput} 
+                    placeholder="Your course goal"
+                    placeholderTextColor='#ffffff'
+                    color='#ffffff'
+                    onChangeText={handleChange}
+                    value={text}
+                    ></TextInput>
+                <Button 
+                    color="#f542ce" 
+                    title="Add Goal"
+                    onPress={handleSubmit}
+                    disabled={text.length === 0}
+                ></Button>
+            </View>
+        </Modal>
     );
 }
 
