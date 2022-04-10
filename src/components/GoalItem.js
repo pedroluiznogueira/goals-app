@@ -1,18 +1,33 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
+import { useContext } from 'react';
+import GoalContext from '../context/GoalContext';
 
 function GoalItem (props) {
-    return (
-    <View style={styles.goalItem} key={props.item.key}>
+  const {deleteGoal} = useContext(GoalContext);
+  
+  const handleDelete = () => {
+    deleteGoal(props.item.text);
+  }
+
+  return (
+      <View style={styles.goalItem} key={props.item.key}>
         <Text style={styles.goalText}>{props.item.text}</Text>
-    </View>
-    );
+
+        <Pressable onPress={handleDelete}>
+          <View style={styles.deleteContainer}>
+            <Text style={styles.deleteIcon}>X</Text>
+          </View>
+        </Pressable>
+      </View>
+  );
 }
 
 export default GoalItem;
 
 const styles = StyleSheet.create({  
     goalItem: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
       padding: 8,
       margin: 8,
       borderRadius: 6,
@@ -20,5 +35,15 @@ const styles = StyleSheet.create({
     },
     goalText: {
       color: 'black'
+    },
+    deleteContainer: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 20,
+      height: 20,
+      backgroundColor: 'white'
+    },
+    deleteIcon: {
+      color: 'purple'
     }
   });

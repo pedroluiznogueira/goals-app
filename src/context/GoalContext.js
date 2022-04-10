@@ -6,6 +6,10 @@ const GoalContext = createContext();
 export const GoalProvider = ( {children} ) => {
     const [goals, setGoals] = useState([]);
 
+    const deleteGoal = (selectedGoal) => {
+        setGoals(goals.filter((goal) => selectedGoal !== goal.text));
+    }
+
     const addGoal = (enteredGoal) => {
         setGoals((currentGoals) => [
             ...currentGoals,
@@ -16,7 +20,8 @@ export const GoalProvider = ( {children} ) => {
     return(
         <GoalContext.Provider value={{
             goals: goals,
-            addGoal: addGoal
+            addGoal: addGoal,
+            deleteGoal: deleteGoal
         }}>
             {children}
         </GoalContext.Provider>
