@@ -13,11 +13,14 @@ function GoalItem (props) {
       <View style={styles.goalItem} key={props.goal.id}>
         <Text style={styles.goalText}>{props.goal.text}</Text>
 
-        <Pressable onPress={handleDelete}>
-          <View style={styles.deleteContainer}>
-            <Text style={styles.deleteIcon}>X</Text>
+        <View style={styles.deleteContainer}>
+          <Pressable 
+            android_ripple={{color: '#dddddd'}}
+            style={( {pressed} ) => pressed && styles.pressedItem}
+            onPress={handleDelete}>
+              <Text style={styles.deleteIcon}>X</Text>
+          </Pressable>
           </View>
-        </Pressable>
       </View>
   );
 }
@@ -34,7 +37,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#f542ce'
     },
     goalText: {
-      color: 'black'
+      color: 'white'
     },
     deleteContainer: {
       alignItems: 'center',
@@ -45,5 +48,8 @@ const styles = StyleSheet.create({
     },
     deleteIcon: {
       color: 'purple'
+    },
+    pressedItem: {
+      opacity: 0.5
     }
   });
