@@ -4,7 +4,7 @@ import GoalContext from '../context/GoalContext';
 
 function GoalInput() {
     const [text, setText] = useState('');
-    const {addGoal, isModalVisible} = useContext(GoalContext);
+    const {addGoal, isModalVisible, hideModal} = useContext(GoalContext);
     
     const handleSubmit = () => {
         addGoal(text);
@@ -15,23 +15,37 @@ function GoalInput() {
         setText(enteredGoal);
     };
 
+    const handleCancel = () => {
+        hideModal();
+    }
+
     return (
-        <Modal visible={isModalVisible} animationType="slide">
+        <Modal 
+            visible={isModalVisible} 
+            animationType='slide'
+        >
             <View style={styles.inputContainer}>
                 <TextInput 
                     style={styles.textInput} 
-                    placeholder="Your course goal"
+                    placeholder='Your course goal'
                     placeholderTextColor='#ffffff'
                     color='#ffffff'
                     onChangeText={handleChange}
                     value={text}
                     ></TextInput>
-                <Button 
-                    color="#f542ce" 
-                    title="Add Goal"
-                    onPress={handleSubmit}
-                    disabled={text.length === 0}
-                ></Button>
+                <View style={styles.buttonsContainer}>    
+                    <Button 
+                        color='#5e0acc'
+                        title='Add Goal'
+                        onPress={handleSubmit}
+                        disabled={text.length === 0}
+                    ></Button>
+                    <Button 
+                        color='#5e0acc'
+                        title='Cancel'
+                        onPress={handleCancel}
+                    ></Button>
+                </View>
             </View>
         </Modal>
     );
@@ -41,18 +55,22 @@ export default GoalInput;
 
 const styles = StyleSheet.create({  
     inputContainer: {
-      flex: 0.2,
-      flexDirection: 'row',
+      flex: 1,
       alignItems: 'center',
-      borderBottomWidth: 1,
-      borderBottomColor: '#cccccc',
-      marginBottom: 24
+      justifyContent: 'center',
+      backgroundColor: '#f542ce'
     },
     textInput: {
       borderWidth: 1,
       borderColor: '#cccccc',
       width: '70%',
-      marginRight: 8,
-      padding: 8
+      margin: 20,
+      padding: 10
+    },
+    buttonsContainer: {
+        width: 200,
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: 'row'
     }
 });

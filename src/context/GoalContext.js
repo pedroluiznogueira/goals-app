@@ -56,13 +56,18 @@ export const GoalProvider = ( {children} ) => {
         setIsModalVisible(true);
     }
 
+    const hideModal = () => {
+        setIsModalVisible(false);
+    }
+
     return(
         <GoalContext.Provider value={{
             goals: goals,
             addGoal: addGoal,
             deleteGoal: deleteGoal,
             isModalVisible: isModalVisible,
-            displayModal: displayModal
+            displayModal: displayModal,
+            hideModal: hideModal
         }}>
             {children}
         </GoalContext.Provider>
