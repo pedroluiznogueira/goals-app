@@ -2,9 +2,9 @@ import { View, StyleSheet, TextInput, Button, Modal } from 'react-native';
 import { useContext, useState } from 'react';
 import GoalContext from '../context/GoalContext';
 
-function InputGoal() {
+function GoalInput() {
     const [text, setText] = useState('');
-    const {addGoal} = useContext(GoalContext);
+    const {addGoal, isModalVisible} = useContext(GoalContext);
     
     const handleSubmit = () => {
         addGoal(text);
@@ -16,7 +16,7 @@ function InputGoal() {
     };
 
     return (
-        <Modal>
+        <Modal visible={isModalVisible} animationType="slide">
             <View style={styles.inputContainer}>
                 <TextInput 
                     style={styles.textInput} 
@@ -37,7 +37,7 @@ function InputGoal() {
     );
 }
 
-export default InputGoal;
+export default GoalInput;
 
 const styles = StyleSheet.create({  
     inputContainer: {

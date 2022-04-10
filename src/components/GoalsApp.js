@@ -3,25 +3,26 @@ import {
     StyleSheet,
     Button
 } from 'react-native';
-import { useState } from 'react';
+import { useContext } from 'react';
 import GoalInput from './GoalInput';
 import GoalsList from './GoalsList';
+import GoalContext from '../context/GoalContext';
 
 function GoalsApp() {
-    const [isModalVisible, setIsModalVisible] = useState(false);
+    const {displayModal} = useContext(GoalContext);
 
-    const displayModal = () => {
-        setIsModalVisible(true);
+    const handleClick = () => {
+        displayModal();
     }
 
     return (
         <View style={styles.appContainer}>
             <Button 
                 title='Add new Goal'
-                color='#5e0acc'
-                onPress={displayModal}
+                color='#f542ce'
+                onPress={handleClick}
             />
-            {isModalVisible && <GoalInput />}
+            <GoalInput />
             <GoalsList />
         </View>
   );

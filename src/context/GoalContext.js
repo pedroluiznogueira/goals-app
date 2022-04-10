@@ -5,6 +5,7 @@ const GoalContext = createContext();
 
 export const GoalProvider = ( {children} ) => {
     const [goals, setGoals] = useState([]);
+    const [isModalVisible, setIsModalVisible] = useState(false);
     const apiUrl = "http://b2bf-2804-14c-59-30f6-7475-4056-1df7-7875.ngrok.io";
 
     useEffect(() => {
@@ -51,11 +52,17 @@ export const GoalProvider = ( {children} ) => {
         return data;
     }
 
+    const displayModal = () => {
+        setIsModalVisible(true);
+    }
+
     return(
         <GoalContext.Provider value={{
             goals: goals,
             addGoal: addGoal,
-            deleteGoal: deleteGoal
+            deleteGoal: deleteGoal,
+            isModalVisible: isModalVisible,
+            displayModal: displayModal
         }}>
             {children}
         </GoalContext.Provider>
