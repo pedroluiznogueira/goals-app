@@ -1,7 +1,7 @@
 ---
 name: Sugira uma feature
 about: Sugira uma ideia para o projeto
-title: ''
+title: '[FEAT-REQUEST] - _Dê uma descrição à sua issue...'
 labels: ''
 assignees: ''
 
