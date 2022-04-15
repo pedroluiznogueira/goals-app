@@ -1,27 +1,27 @@
 ---
-name: Bug report
-about: Create a report to help us improve
+name: Reporte um Bug
+about: Crie um reporte para nos ajudar a melhorar
 title: "[BUG] - _Give it a title_"
 labels: ''
 assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**Descreva o bug**
+Uma clara e concisa descrição do bug.
 
-**To Reproduce**
+**Como reproduzir**
 Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+1. Vá para '...'
+2. Clique em '....'
+3. Navegue para '....'
+4. Veja o error
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**Comportamento esperado**
+Uma clara e concisa descrição do que você esperava que acontecesse.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+**Prints**
+Se pertinent, adicione prints para ajudar a explicar o problema.
 
-**Additional context**
-Add any other context about the problem here.
+**Informações adicionais**
+Adicione qualquer outra informação que você ache válida aqui.
