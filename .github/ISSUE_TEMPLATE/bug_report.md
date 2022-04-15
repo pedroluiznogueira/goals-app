@@ -1,7 +1,7 @@
 ---
 name: Reporte um Bug
 about: Crie um reporte para nos ajudar a melhorar
-title: "[BUG] - _Give it a title_"
+title: "[BUG] - _Dê um título à sua issue_"
 labels: ''
 assignees: ''
 
