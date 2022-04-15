@@ -35,13 +35,13 @@ function GoalInput() {
                     ></TextInput>
                 <View style={styles.buttonsContainer}>    
                     <Button 
-                        color='#5e0acc'
+                        color='#f542ce'
                         title='Add Goal'
                         onPress={handleSubmit}
                         disabled={text.length === 0}
                     ></Button>
                     <Button 
-                        color='#5e0acc'
+                        color='#f542ce'
                         title='Cancel'
                         onPress={handleCancel}
                     ></Button>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#f542ce'
+      backgroundColor: '#5e0acc'
     },
     textInput: {
       borderWidth: 1,
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
       padding: 10
     },
     buttonsContainer: {
-        width: 200,
+        width: '45%',
         justifyContent: 'space-between',
         alignItems: 'center',
         flexDirection: 'row'

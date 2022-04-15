@@ -6,7 +6,7 @@ const GoalContext = createContext();
 export const GoalProvider = ( {children} ) => {
     const [goals, setGoals] = useState([]);
     const [isModalVisible, setIsModalVisible] = useState(false);
-    const apiUrl = "http://b2bf-2804-14c-59-30f6-7475-4056-1df7-7875.ngrok.io";
+    const apiUrl = "http://13c5-2804-14c-59-30f6-7475-4056-1df7-7875.ngrok.io";
 
     useEffect(() => {
         findGoals();
